@@ -15,18 +15,40 @@
 			height: 100%; 
 			background: rgba(0,0,0,.5);
 		}
+		#janela {
+			background: white;
+			width: 500px;
+			height: 300px;
+			margin: 50px auto;
+			padding: 5px;
+		}
 		</style>
 		
 		<script src="js/jquery-3.2.1.js"></script>
 		
 		<script>
 			jQuery(document).ready(function($) {
+				var janelaCriada = false;
+			 
 				$('.modal').click(function(e) {
-					var janelaModal = '<div id="fundoModal"><a href="#" id="fecharModal">Clique aqui para fechar</a></div>';
-					$('body').append(janelaModal);
-					$('#fecharModal').click( function(e) {
-						$('#fundoModal').hide();
-					});
+					if (janelaCriada) { 
+						$('#fundoModal').show();
+					} else { 
+						var janelaModal = 
+						'<div id="fundoModal">' +
+						'<div id="janela">' +
+						'<h2>Janela Modal</h2><p>Aqui temos o conteúdo de nossa janela modal.</p>' +
+						'<p><a href="#" id="fecharModal">Clique aqui para fechar</a>' +
+						'</div></div>';
+						$('body').append(janelaModal);
+			 
+						$('#fecharModal').click( function(e) {
+							$('#fundoModal').hide();
+						});
+			 
+						janelaCriada = true;
+					}
+			 
 					return false;
 				});  
 			 
