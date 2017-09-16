@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Exemplo de uma janela modal</title>
+		
+		<style>
+		#conteudo {
+			width: 500px;
+		}
+		#fundoModal {
+			position:absolute; 
+			top:0; left:0; 
+			width:100%; height:100%; 
+			background: rgba(0,0,0,.5);
+		}
+		</style>
+		
+		<script src="js/jquery-3.2.1.js"></script>
+		
+		<script>
+		jQuery(document).ready(function($) {
+			$('.modal').click(function(e) {
+				var janelaModal = '<div id="fundoModal"></div>';
+				$('body').append(janelaModal);
+				return false;
+			});  
+		 
+		});
+		</script>
+		
+	</head>
+	<body>
+	<div id="conteudo">
+		<h1>Exemplo de janela modal</h1>
+		<p>Neste exemplo, estaremos abrindo uma janela modal no centro da página, colocando todo o restante da página em uma cor mais escura, fechando a janela quando o usuário clicar no botão de fechar.</p>
+			<p>Para abrir a janela modal, clique <a class=modal href="#">aqui</a></p>
+	</div>
+	</body>
+</html>
