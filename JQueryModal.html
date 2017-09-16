@@ -8,9 +8,11 @@
 			width: 500px;
 		}
 		#fundoModal {
-			position:absolute; 
-			top:0; left:0; 
-			width:100%; height:100%; 
+			position: absolute; 
+			top: 0;
+			left: 0; 
+			width: 100%;
+			height: 100%; 
 			background: rgba(0,0,0,.5);
 		}
 		</style>
@@ -18,14 +20,17 @@
 		<script src="js/jquery-3.2.1.js"></script>
 		
 		<script>
-		jQuery(document).ready(function($) {
-			$('.modal').click(function(e) {
-				var janelaModal = '<div id="fundoModal"></div>';
-				$('body').append(janelaModal);
-				return false;
-			});  
-		 
-		});
+			jQuery(document).ready(function($) {
+				$('.modal').click(function(e) {
+					var janelaModal = '<div id="fundoModal"><a href="#" id="fecharModal">Clique aqui para fechar</a></div>';
+					$('body').append(janelaModal);
+					$('#fecharModal').click( function(e) {
+						$('#fundoModal').hide();
+					});
+					return false;
+				});  
+			 
+			});
 		</script>
 		
 	</head>
